@@ -1,7 +1,11 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animate.css">
+</head>
 <body>
-<div id="output">
-</div>
+<div id="output" />
 </body>
 
 <script type="text/javascript">
@@ -36,6 +40,7 @@
 
 	function updateOutput(text) {
 		output.innerHTML = text;
+		//output.classList.toggle('animated', 'fadeIn');
 	}
 
 	document.addEventListener("DOMContentLoaded", function(){
