@@ -1,7 +1,7 @@
 package server;
 
 import org.joda.time.Days;
-import org.joda.time.LocalTime;
+
 
 import javax.websocket.Session;
 import java.io.IOException;
@@ -11,7 +11,7 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 class UpdateCount implements Runnable {
 
     private ConcurrentLinkedQueue<Session> sessions;
-    private org.joda.time.LocalDateTime endTime = org.joda.time.LocalDateTime.parse("2019-05-28T00:00:00");
+    private LocalDateTime endTime = LocalDateTime.parse("2019-05-28T00:00:00");
     private boolean isRunning = true;
 
     public UpdateCount(){
@@ -35,12 +35,11 @@ class UpdateCount implements Runnable {
             try {
                 Thread.sleep(500);
 
-                org.joda.time.LocalDateTime now = org.joda.time.LocalDateTime.now();
-                int days = Days.daysBetween(now, this.endTime).getDays();
-
+                LocalDateTime now = LocalDateTime.now();
+                String millis = TimeCalculation.getTimeLeft(now, endTime);
                 for (Session session: sessions)
                 {
-                    session.getBasicRemote().sendText("Days Remaining: " + days);
+                    session.getBasicRemote().sendText( millis);
                 }
             } catch (InterruptedException e) {
                 e.printStackTrace();

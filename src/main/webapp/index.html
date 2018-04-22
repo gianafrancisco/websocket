@@ -1,0 +1,46 @@
+<html>
+<body>
+<div id="output">
+</div>
+</body>
+
+<script type="text/javascript">
+	var webSocket;
+	var output = document.getElementById("output");
+
+	function connect() {
+		// open the connection if one does not exist
+		if (webSocket !== undefined
+				&& webSocket.readyState !== WebSocket.CLOSED) {
+			return;
+		}
+		// Create a websocket
+		webSocket = new WebSocket("ws://localhost:8080/time");
+
+		webSocket.onopen = function(event) {
+
+		};
+
+		webSocket.onmessage = function(event) {
+			updateOutput(event.data);
+		};
+
+		webSocket.onclose = function(event) {
+
+		};
+	}
+
+	function closeSocket() {
+		webSocket.close();
+	}
+
+	function updateOutput(text) {
+		output.innerHTML = text;
+	}
+
+	document.addEventListener("DOMContentLoaded", function(){
+        connect();
+    }, false);
+
+</script>
+</html>
