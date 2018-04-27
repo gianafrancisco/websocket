@@ -18,7 +18,11 @@
 			return;
 		}
 		// Create a websocket
-		webSocket = new WebSocket("ws://localhost:8080/app/time");
+		var url = document.URL;
+		console.log(url);
+		var wsUrl = 'ws:' + url.split(':')[1] + ':' + url.split(':')[2].split('/')[0] + '/app/time';
+        console.log(wsUrl);
+		webSocket = new WebSocket(wsUrl);
 
 		webSocket.onopen = function(event) {
 
