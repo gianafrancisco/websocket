@@ -8,7 +8,8 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 class UpdateCount implements Runnable {
 
     private ConcurrentLinkedQueue<Session> sessions;
-    private LocalDateTime endTime = LocalDateTime.parse("2019-05-28T00:00:00");
+    private final String endDate = System.getenv("END_DATE").equals("") ? "2019-06-04T00:00:00" : System.getenv("END_DATE");
+    private LocalDateTime endTime = LocalDateTime.parse(endDate);
     private boolean isRunning = true;
 
     public UpdateCount(){
