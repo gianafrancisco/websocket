@@ -14,7 +14,7 @@ public class UpdateCountTest {
         LocalDateTime start = LocalDateTime.parse("2017-05-28T00:00:00");
 
         String result = TimeCalculation.getTimeLeft(start, end);
-        Assert.assertThat(result, is("365 D&iacute;as 0 Horas 0 Minutos 0 Segundos"));
+        Assert.assertThat(result, is("365" + TimeCalculation.DIAS + "0" + TimeCalculation.HORAS + "0" + TimeCalculation.MINUTOS + "0" + TimeCalculation.SEGUNDOS));
 
     }
 
@@ -24,7 +24,7 @@ public class UpdateCountTest {
         LocalDateTime start = LocalDateTime.parse("2018-05-27T00:00:00");
 
         String result = TimeCalculation.getTimeLeft(start, end);
-        Assert.assertThat(result, is("1 D&iacute;a 0 Horas 0 Minutos 0 Segundos"));
+        Assert.assertThat(result, is("1" + TimeCalculation.DIA + "0" + TimeCalculation.HORAS + "0" + TimeCalculation.MINUTOS + "0" + TimeCalculation.SEGUNDOS));
 
     }
 
@@ -34,7 +34,7 @@ public class UpdateCountTest {
         LocalDateTime start = LocalDateTime.parse("2018-05-28T00:00:00");
 
         String result = TimeCalculation.getTimeLeft(start, end);
-        Assert.assertThat(result, is("0 D&iacute;as 10 Horas 0 Minutos 0 Segundos"));
+        Assert.assertThat(result, is("0" + TimeCalculation.DIAS + "10" + TimeCalculation.HORAS + "0" + TimeCalculation.MINUTOS + "0" + TimeCalculation.SEGUNDOS));
 
     }
 
@@ -44,7 +44,7 @@ public class UpdateCountTest {
         LocalDateTime start = LocalDateTime.parse("2018-05-28T00:00:00");
 
         String result = TimeCalculation.getTimeLeft(start, end);
-        Assert.assertThat(result, is("0 D&iacute;as 10 Horas 0 Minutos 0 Segundos"));
+        Assert.assertThat(result, is("0" + TimeCalculation.DIAS + "10" + TimeCalculation.HORAS + "0" + TimeCalculation.MINUTOS + "0" + TimeCalculation.SEGUNDOS));
 
     }
 
@@ -54,7 +54,7 @@ public class UpdateCountTest {
         LocalDateTime start = LocalDateTime.parse("2018-05-28T09:00:00");
 
         String result = TimeCalculation.getTimeLeft(start, end);
-        Assert.assertThat(result, is("0 D&iacute;as 1 Hora 0 Minutos 0 Segundos"));
+        Assert.assertThat(result, is("0" + TimeCalculation.DIAS + "1" + TimeCalculation.HORA + "0" + TimeCalculation.MINUTOS + "0" + TimeCalculation.SEGUNDOS));
 
     }
 
@@ -64,7 +64,7 @@ public class UpdateCountTest {
         LocalDateTime start = LocalDateTime.parse("2018-05-28T10:00:00");
 
         String result = TimeCalculation.getTimeLeft(start, end);
-        Assert.assertThat(result, is("0 D&iacute;as 0 Horas 0 Minutos 0 Segundos"));
+        Assert.assertThat(result, is("0" + TimeCalculation.DIAS + "0" + TimeCalculation.HORAS + "0" + TimeCalculation.MINUTOS + "0" + TimeCalculation.SEGUNDOS));
 
     }
 
@@ -74,7 +74,7 @@ public class UpdateCountTest {
         LocalDateTime start = LocalDateTime.parse("2018-05-28T10:00:00");
 
         String result = TimeCalculation.getTimeLeft(start, end);
-        Assert.assertThat(result, is("0 D&iacute;as 0 Horas 2 Minutos 0 Segundos"));
+        Assert.assertThat(result, is("0" + TimeCalculation.DIAS + "0" + TimeCalculation.HORAS + "2" + TimeCalculation.MINUTOS + "0" + TimeCalculation.SEGUNDOS));
 
     }
 
@@ -84,7 +84,7 @@ public class UpdateCountTest {
         LocalDateTime start = LocalDateTime.parse("2018-05-28T10:01:00");
 
         String result = TimeCalculation.getTimeLeft(start, end);
-        Assert.assertThat(result, is("0 D&iacute;as 0 Horas 1 Minuto 0 Segundos"));
+        Assert.assertThat(result, is("0" + TimeCalculation.DIAS + "0" + TimeCalculation.HORAS + "1" + TimeCalculation.MINUTO + "0" + TimeCalculation.SEGUNDOS));
 
     }
 
@@ -94,7 +94,7 @@ public class UpdateCountTest {
         LocalDateTime start = LocalDateTime.parse("2018-05-28T10:00:00");
 
         String result = TimeCalculation.getTimeLeft(start, end);
-        Assert.assertThat(result, is("0 D&iacute;as 0 Horas 0 Minutos 10 Segundos"));
+        Assert.assertThat(result, is("0" + TimeCalculation.DIAS + "0" + TimeCalculation.HORAS + "0" + TimeCalculation.MINUTOS + "10" + TimeCalculation.SEGUNDOS));
 
     }
 
@@ -104,7 +104,7 @@ public class UpdateCountTest {
         LocalDateTime start = LocalDateTime.parse("2018-05-28T10:02:00");
 
         String result = TimeCalculation.getTimeLeft(start, end);
-        Assert.assertThat(result, is("0 D&iacute;as 0 Horas 0 Minutos 2 Segundos"));
+        Assert.assertThat(result, is("0" + TimeCalculation.DIAS + "0" + TimeCalculation.HORAS + "0" + TimeCalculation.MINUTOS + "2" + TimeCalculation.SEGUNDOS));
 
     }
 
@@ -114,7 +114,7 @@ public class UpdateCountTest {
         LocalDateTime start = LocalDateTime.parse("2018-05-28T10:02:01");
 
         String result = TimeCalculation.getTimeLeft(start, end);
-        Assert.assertThat(result, is("0 D&iacute;as 0 Horas 0 Minutos 1 Segundo"));
+        Assert.assertThat(result, is("0" + TimeCalculation.DIAS + "0" + TimeCalculation.HORAS + "0" + TimeCalculation.MINUTOS + "1" + TimeCalculation.SEGUNDO));
 
     }
 
@@ -124,7 +124,7 @@ public class UpdateCountTest {
         LocalDateTime start = LocalDateTime.parse("2018-05-28T10:00:10");
 
         String result = TimeCalculation.getTimeLeft(start, end);
-        Assert.assertThat(result, is("0 D&iacute;as 0 Horas 0 Minutos 0 Segundos"));
+        Assert.assertThat(result, is("0" + TimeCalculation.DIAS + "0" + TimeCalculation.HORAS + "0" + TimeCalculation.MINUTOS + "0" + TimeCalculation.SEGUNDOS));
 
     }
 }
