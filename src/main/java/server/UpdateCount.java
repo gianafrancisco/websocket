@@ -32,9 +32,13 @@ class UpdateCount implements Runnable {
         while (isRunning){
             try {
                 Thread.sleep(500);
-
                 LocalDateTime now = LocalDateTime.now();
-                String millis = TimeCalculation.getTimeLeft(now, endTime);
+                String millis = null;
+                if(!StatusSingleton.getInstance().isWorking()){
+                    millis = "";
+                }else{
+                    millis = TimeCalculation.getTimeLeft(now, endTime);
+                }
                 for (Session session: sessions)
                 {
                     session.getBasicRemote().sendText( millis);

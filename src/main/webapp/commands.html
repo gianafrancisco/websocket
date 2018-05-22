@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript">
+        function start(){
+            document.getElementById('start').submit();
+        }
+        function stop(){
+            document.getElementById('stop').submit();
+        }
+    </script>
+</head>
+<body>
+<form id="start" method="POST" action="start">
+    <button type="button" onclick="start();" style='width: 150px;'>Iniciar</button>
+</form>
+<br>
+<form id="stop" method="POST" action="stop">
+    <button type="button" onclick="stop();" style='width: 150px;'>Parar</button>
+</form>
+
+</body>
+</html>
