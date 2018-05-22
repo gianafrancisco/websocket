@@ -4,7 +4,7 @@ Para compilar hay que ejecutar los siguientes comandos:
 
 ```
 mvn install (para generar el jar)
-nvm war:war (para generar el archivo war a deployar en jetty)
+mvn war:war (para generar el archivo war a deployar en jetty)
 ```
 
 Luego el archivo .war que se generó en el directorio target copiarlo al directorio webapps de jetty (de ser necesario cambiar el nombre)
