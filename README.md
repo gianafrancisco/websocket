@@ -38,3 +38,9 @@ Bajar la versión [9.4.9.v20180320](https://github.com/eclipse/jetty.project/arc
 java -jar start.jar
 ```
 
+# Funcionamiento
+
+Para hacer las pruebas del sistema hay que ingresar al navegador http://localhost:8080/APP_NAME/
+
+Para controlar la cuenta regresiva hay que ingresar a http://localhost:8080/APP_NAME/conmmands.html
+
