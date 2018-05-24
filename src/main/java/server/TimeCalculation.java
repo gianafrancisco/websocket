@@ -19,6 +19,9 @@ public class TimeCalculation {
 
     public static String getTimeLeft(LocalDateTime start, LocalDateTime end){
         long left = end.toEpochSecond(ZoneOffset.UTC) - start.toEpochSecond(ZoneOffset.UTC);
+        if(left < 0){
+            left = 0;
+        }
         long days = left / SECONDS_PER_DAY;
         long hours = (left % SECONDS_PER_DAY) / SECONDS_PER_HOUR;
         long minutes = (left % SECONDS_PER_HOUR) / SECONDS_PER_MINUTE;

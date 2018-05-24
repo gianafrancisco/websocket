@@ -127,4 +127,15 @@ public class UpdateCountTest {
         Assert.assertThat(result, is("0" + TimeCalculation.DIAS + "0" + TimeCalculation.HORAS + "0" + TimeCalculation.MINUTOS + "0" + TimeCalculation.SEGUNDOS));
 
     }
+
+    @Test
+    public void Test_after_deadline() {
+        LocalDateTime end = LocalDateTime.parse("2018-05-28T10:00:10");
+        LocalDateTime start = LocalDateTime.parse("2018-05-29T10:00:10");
+
+        String result = TimeCalculation.getTimeLeft(start, end);
+        Assert.assertThat(result, is("0" + TimeCalculation.DIAS + "0" + TimeCalculation.HORAS + "0" + TimeCalculation.MINUTOS + "0" + TimeCalculation.SEGUNDOS));
+
+    }
+
 }
